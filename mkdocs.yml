@@ -1,0 +1,5 @@
+site_name: Docs as Code – Windows Setup
+theme:
+  name: material
+nav:
+  - Home: index.md
