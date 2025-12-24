@@ -1,5 +1,20 @@
-site_name: Docs as Code – Windows Setup
+site_name: Sample REST API Documentation
+
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
 nav:
-  - Home: index.md
+  - Overview:
+      - Introduction: index.md
+      - API Overview: overview.md
+  - Authentication: authentication.md
+  - Endpoints:
+      - Users API: endpoints/users.md
+      - Orders API: endpoints/orders.md
+      - Payments API: endpoints/payments.md
+  - Errors: errors.md
+  - Rate Limits: rate-limits.md
