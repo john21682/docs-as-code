@@ -787,17 +787,20 @@
 
 
 
+<p>```markdown</p>
 <h1 id="orders-api">Orders API</h1>
 <h2 id="create-an-order">Create an Order</h2>
 <p><strong>POST</strong> <code>/orders</code></p>
 <h3 id="request-body">Request Body</h3>
-<p>```json
+<p><code>json
 {
   "user_id": "usr_12345",
   "amount": 2500,
   "currency": "INR"
-}</p>
-<p>{
+}
+Response</code>json
+Copy code
+{
   "order_id": "ord_98765",
   "status": "created"
 }</p>
