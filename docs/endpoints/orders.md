@@ -11,14 +11,17 @@
   "amount": 2500,
   "currency": "INR"
 }
+```
+
 ### Response (201 Created)
-json
+```json
 {
   "order_id": "ord_98765",
   "status": "created",
   "amount": 2500,
   "currency": "INR"
 }
+```
 **Response Fields**
 
 | Field | Description |
