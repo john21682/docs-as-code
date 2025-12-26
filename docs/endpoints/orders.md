@@ -1,3 +1,4 @@
+```markdown
 # Orders API
 
 ## Create an Order
@@ -11,7 +12,9 @@
   "amount": 2500,
   "currency": "INR"
 }
-
+Response
+```json
+Copy code
 {
   "order_id": "ord_98765",
   "status": "created"
