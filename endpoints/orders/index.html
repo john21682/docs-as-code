@@ -813,21 +813,21 @@
 <h2 id="create-an-order">Create an Order</h2>
 <p><strong>POST</strong> <code>/orders</code></p>
 <h3 id="request-body">Request Body</h3>
-<p>```json
-{
-  "user_id": "usr_12345",
-  "amount": 2500,
-  "currency": "INR"
-}</p>
-<h3 id="response-201-created">Response (201 Created)</h3>
-<p>json
-{
-  "order_id": "ord_98765",
-  "status": "created",
-  "amount": 2500,
-  "currency": "INR"
+<pre><code class="language-json">{
+  &quot;user_id&quot;: &quot;usr_12345&quot;,
+  &quot;amount&quot;: 2500,
+  &quot;currency&quot;: &quot;INR&quot;
 }
-<strong>Response Fields</strong></p>
+</code></pre>
+<h3 id="response-201-created">Response (201 Created)</h3>
+<pre><code class="language-json">{
+  &quot;order_id&quot;: &quot;ord_98765&quot;,
+  &quot;status&quot;: &quot;created&quot;,
+  &quot;amount&quot;: 2500,
+  &quot;currency&quot;: &quot;INR&quot;
+}
+</code></pre>
+<p><strong>Response Fields</strong></p>
 <table>
 <thead>
 <tr>
