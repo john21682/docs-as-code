@@ -12,7 +12,7 @@
   "currency": "INR"
 }
 ### Response (201 Created)
-```json
+json
 {
   "order_id": "ord_98765",
   "status": "created",
