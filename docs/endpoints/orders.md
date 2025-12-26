@@ -1,4 +1,3 @@
-```markdown
 # Orders API
 
 ## Create an Order
@@ -12,10 +11,19 @@
   "amount": 2500,
   "currency": "INR"
 }
-Response
+### Response (201 Created)
 ```json
-Copy code
 {
   "order_id": "ord_98765",
-  "status": "created"
+  "status": "created",
+  "amount": 2500,
+  "currency": "INR"
 }
+**Response Fields**
+
+| Field | Description |
+|------|------------|
+| order_id | Unique identifier for the order |
+| status | Current order status |
+| amount | Order amount |
+| currency | Currency code |
