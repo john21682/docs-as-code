@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#payments-api" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -560,6 +565,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payments API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -577,6 +602,64 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Payment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Payment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -661,6 +744,55 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Payment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Payment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -677,9 +809,67 @@
 
 
 
-  <h1>Payments API</h1>
-
-
+<h1 id="payments-api">Payments API</h1>
+<h2 id="create-a-payment">Create a Payment</h2>
+<p><strong>POST</strong> <code>/payments</code></p>
+<h3 id="description">Description</h3>
+<p>Creates a payment for an existing order. Payments are processed asynchronously and return a payment status.</p>
+<hr />
+<h3 id="request-body">Request Body</h3>
+<pre><code class="language-json">{
+  &quot;order_id&quot;: &quot;ord_98765&quot;,
+  &quot;payment_method&quot;: &quot;card&quot;,
+  &quot;amount&quot;: 2500,
+  &quot;currency&quot;: &quot;INR&quot;
+}
+</code></pre>
+<p>Request Fields
+Field   Type    Required    Description
+order_id    string  Yes Identifier of the order being paid
+payment_method  string  Yes Payment method (e.g., card, upi, netbanking)
+amount  number  Yes Payment amount
+currency    string  Yes ISO currency code</p>
+<p>Response (201 Created)</p>
+<pre><code class="language-json">{
+  &quot;payment_id&quot;: &quot;pay_45678&quot;,
+  &quot;order_id&quot;: &quot;ord_98765&quot;,
+  &quot;status&quot;: &quot;processing&quot;,
+  &quot;amount&quot;: 2500,
+  &quot;currency&quot;: &quot;INR&quot;
+}
+</code></pre>
+<p>Response Fields
+Field   Description
+payment_id  Unique identifier for the payment
+order_id    Associated order identifier
+status  Current payment status
+amount  Amount processed
+currency    Currency code</p>
+<p>Get Payment Status</p>
+<p>GET /payments/{payment_id}</p>
+<p>Response (200 OK)</p>
+<pre><code class="language-json">{
+  &quot;payment_id&quot;: &quot;pay_45678&quot;,
+  &quot;order_id&quot;: &quot;ord_98765&quot;,
+  &quot;status&quot;: &quot;successful&quot;,
+  &quot;processed_at&quot;: &quot;2025-01-15T10:30:00Z&quot;
+}
+</code></pre>
+<p>Payment Status Values
+Status  Meaning
+processing  Payment is being processed
+successful  Payment completed successfully
+failed  Payment failed
+refunded    Payment was refunded</p>
+<p>Error Responses</p>
+<p>Example Error Response</p>
+<pre><code class="language-json">{
+  &quot;error&quot;: {
+    &quot;code&quot;: &quot;PAYMENT_FAILED&quot;,
+    &quot;message&quot;: &quot;Insufficient funds&quot;
+  }
+}
+</code></pre>
 
 
 
