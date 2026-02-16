@@ -22,10 +22,11 @@
   "currency": "INR"
 }
 ```
+
 **Response Fields**
 
 | Field | Description |
-|------|------------|
+|--------|-------------|
 | order_id | Unique identifier for the order |
 | status | Current order status |
 | amount | Order amount |

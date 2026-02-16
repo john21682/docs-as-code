@@ -1,10 +1,7 @@
 # Sample REST API
 
-This is a sample API documentation site created to demonstrate a Docs-as-Code approach.
+This documentation demonstrates a Docs-as-Code approach for API documentation.
 
-It shows how API documentation can be:
-- Version controlled
-- Structured for developers
-- Maintained alongside code
+It includes structured endpoint documentation, authentication details, and error handling examples.
 
-This site is intended as a portfolio example.
+This site is intended as a professional portfolio sample.

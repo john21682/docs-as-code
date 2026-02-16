@@ -3,11 +3,11 @@
 The API uses standard HTTP status codes.
 
 | Code | Meaning |
-|----|----|
+|------|----------|
 | 400 | Bad Request |
 | 401 | Unauthorized |
 | 404 | Not Found |
-| 500 | Server Error |
+| 500 | Internal Server Error |
 
 ## Error Response Format
 
@@ -18,3 +18,4 @@ The API uses standard HTTP status codes.
     "message": "Missing required field"
   }
 }
+```
