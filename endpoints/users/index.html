@@ -585,6 +585,45 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#response-201-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (201 Created)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-user-by-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get User by ID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get User by ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -765,6 +804,45 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#response-201-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (201 Created)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-user-by-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get User by ID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get User by ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -791,21 +869,28 @@
 <h2 id="create-a-user">Create a User</h2>
 <p><strong>POST</strong> <code>/users</code></p>
 <h3 id="request-body">Request Body</h3>
-<p>```json
-{
-  "name": "John Doe",
-  "email": "john.doe@example.com"
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;email&quot;: &quot;john.doe@example.com&quot;
 }
-{
-  "id": "usr_12345",
-  "name": "John Doe",
-  "email": "john.doe@example.com"
-}</p>
-<p>{
-  "id": "usr_12345",
-  "name": "John Doe",
-  "email": "john.doe@example.com"
-}</p>
+</code></pre>
+<h3 id="response-201-created">Response (201 Created)</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;usr_12345&quot;,
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;email&quot;: &quot;john.doe@example.com&quot;,
+  &quot;created_at&quot;: &quot;2025-01-10T10:15:00Z&quot;
+}
+</code></pre>
+<h2 id="get-user-by-id">Get User by ID</h2>
+<p><strong>GET</strong> <code>/users/{id}</code></p>
+<h3 id="response-200-ok">Response (200 OK)</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;usr_12345&quot;,
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;email&quot;: &quot;john.doe@example.com&quot;
+}
+</code></pre>
 
 
 

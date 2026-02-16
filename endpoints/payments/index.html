@@ -652,6 +652,45 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#response-201-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (201 Created)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-payment-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Payment Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Payment Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -787,6 +826,45 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#response-201-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (201 Created)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-payment-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Payment Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Payment Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-200-ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response (200 OK)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -813,8 +891,7 @@
 <h2 id="create-a-payment">Create a Payment</h2>
 <p><strong>POST</strong> <code>/payments</code></p>
 <h3 id="description">Description</h3>
-<p>Creates a payment for an existing order. Payments are processed asynchronously and return a payment status.</p>
-<hr />
+<p>Creates a payment for an existing order.</p>
 <h3 id="request-body">Request Body</h3>
 <pre><code class="language-json">{
   &quot;order_id&quot;: &quot;ord_98765&quot;,
@@ -823,13 +900,7 @@
   &quot;currency&quot;: &quot;INR&quot;
 }
 </code></pre>
-<p>Request Fields
-Field   Type    Required    Description
-order_id    string  Yes Identifier of the order being paid
-payment_method  string  Yes Payment method (e.g., card, upi, netbanking)
-amount  number  Yes Payment amount
-currency    string  Yes ISO currency code</p>
-<p>Response (201 Created)</p>
+<h3 id="response-201-created">Response (201 Created)</h3>
 <pre><code class="language-json">{
   &quot;payment_id&quot;: &quot;pay_45678&quot;,
   &quot;order_id&quot;: &quot;ord_98765&quot;,
@@ -838,36 +909,14 @@ currency    string  Yes ISO currency code</p>
   &quot;currency&quot;: &quot;INR&quot;
 }
 </code></pre>
-<p>Response Fields
-Field   Description
-payment_id  Unique identifier for the payment
-order_id    Associated order identifier
-status  Current payment status
-amount  Amount processed
-currency    Currency code</p>
-<p>Get Payment Status</p>
-<p>GET /payments/{payment_id}</p>
-<p>Response (200 OK)</p>
+<h2 id="get-payment-status">Get Payment Status</h2>
+<p><strong>GET</strong> <code>/payments/{payment_id}</code></p>
+<h3 id="response-200-ok">Response (200 OK)</h3>
 <pre><code class="language-json">{
   &quot;payment_id&quot;: &quot;pay_45678&quot;,
   &quot;order_id&quot;: &quot;ord_98765&quot;,
   &quot;status&quot;: &quot;successful&quot;,
   &quot;processed_at&quot;: &quot;2025-01-15T10:30:00Z&quot;
-}
-</code></pre>
-<p>Payment Status Values
-Status  Meaning
-processing  Payment is being processed
-successful  Payment completed successfully
-failed  Payment failed
-refunded    Payment was refunded</p>
-<p>Error Responses</p>
-<p>Example Error Response</p>
-<pre><code class="language-json">{
-  &quot;error&quot;: {
-    &quot;code&quot;: &quot;PAYMENT_FAILED&quot;,
-    &quot;message&quot;: &quot;Insufficient funds&quot;
-  }
 }
 </code></pre>
 

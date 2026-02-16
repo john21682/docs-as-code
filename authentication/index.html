@@ -479,10 +479,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sending-the-api-key" class="md-nav__link">
+  <a href="#request-header" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sending the API Key
+        Request Header
       
     </span>
   </a>
@@ -490,10 +490,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-request" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Request
+        Example
       
     </span>
   </a>
@@ -732,10 +732,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sending-the-api-key" class="md-nav__link">
+  <a href="#request-header" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sending the API Key
+        Request Header
       
     </span>
   </a>
@@ -743,10 +743,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-request" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Request
+        Example
       
     </span>
   </a>
@@ -772,12 +772,14 @@
 
 <h1 id="authentication">Authentication</h1>
 <p>The API uses API key authentication.</p>
-<h2 id="sending-the-api-key">Sending the API Key</h2>
-<p>Include the API key in the request header:</p>
-<h2 id="example-request">Example Request</h2>
-<p>```bash
-curl -X GET https://api.samplecompany.com/v1/users \
-  -H "Authorization: Bearer YOUR_API_KEY"</p>
+<h2 id="request-header">Request Header</h2>
+<pre><code>Authorization: Bearer YOUR_API_KEY
+</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-bash">curl -X GET https://api.samplecompany.com/v1/users \
+  -H &quot;Authorization: Bearer YOUR_API_KEY&quot;
+</code></pre>
+<p>Keep API keys confidential.</p>
 
 
 
